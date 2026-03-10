@@ -11,5 +11,4 @@ public class Country
     [MaxLength(100)]
     public string CountryName { get; set; } = null!;
 
-    public bool Active { get; set; }
 }
