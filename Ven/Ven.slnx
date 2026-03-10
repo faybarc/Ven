@@ -1,6 +1,0 @@
-<Solution>
-  <Project Path="Van.Shared/Van.Shared.csproj" />
-  <Project Path="Ven.AccessData/Ven.AccessData.csproj" />
-  <Project Path="Ven.Backend/Ven.Backend.csproj" />
-  <Project Path="Ven.Frontend/Ven.Frontend.csproj" />
-</Solution>

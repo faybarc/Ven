@@ -1,6 +1,0 @@
-@Ven.Backend_HostAddress = http://localhost:5103
-
-GET {{Ven.Backend_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
