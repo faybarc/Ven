@@ -22,6 +22,17 @@ namespace Ven.Backend
             builder.Services.AddDbContext<DataContext>(x =>
                 x.UseSqlServer("name=DefaultConnection", options => options.MigrationsAssembly("Ven.Backend")));
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin", builder =>
+                {
+                    builder.WithOrigins("https://localhost:7009") // dominio de tu aplicación Blazor
+                           .AllowAnyHeader()
+                           .AllowAnyMethod()
+                           .WithExposedHeaders(new string[] { "Totalpages", "Counting" });
+                });
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -36,6 +47,8 @@ namespace Ven.Backend
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("AllowSpecificOrigin");
 
             app.UseAuthorization();
 
